@@ -1,7 +1,12 @@
 # PlaceOn
 
+From Learning to Landing Offers
+
 PlaceOn is an AI-powered placement coach helping students analyze resumes,
-identify skill gaps, generate career roadmaps, and become placement-ready.
+identify skill gaps, generate personalized learning roadmaps, and become
+placement-ready.
+
+Website: https://placeon.in
 
 ## Tech Stack
 
