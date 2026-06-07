@@ -38,4 +38,28 @@ Open http://localhost:3000.
 npm run build
 ```
 
+The build runs `next-sitemap` automatically and generates:
+
+- `public/sitemap.xml`
+- `public/sitemap-0.xml`
+- `public/robots.txt`
+
+## SEO
+
+The production site URL is configured as `https://placeon.in`.
+
+Submit this sitemap in Google Search Console:
+
+```text
+https://placeon.in/sitemap.xml
+```
+
+## Google Analytics
+
+Set your GA4 Measurement ID before deployment:
+
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
 The project is ready to deploy on Vercel.

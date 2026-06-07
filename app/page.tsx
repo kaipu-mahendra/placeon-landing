@@ -70,6 +70,29 @@ const features = [
   },
 ];
 
+const whyUsePlaceOn = [
+  {
+    title: "Resume Analysis",
+    description:
+      "Improve resume structure, keywords, project impact, and ATS readability before applying.",
+  },
+  {
+    title: "AI Career Guidance",
+    description:
+      "Get focused suggestions for skills, projects, certifications, and role-specific preparation.",
+  },
+  {
+    title: "Company Readiness Assessment",
+    description:
+      "Understand how prepared you are for target companies, job roles, and campus placement rounds.",
+  },
+  {
+    title: "Mock Interview Preparation",
+    description:
+      "Practice technical, HR, and behavioral interview questions with clear feedback.",
+  },
+];
+
 const steps = [
   {
     title: "Upload Resume",
@@ -148,6 +171,21 @@ const pricing = [
 
 const faqs = [
   {
+    question: "How does PlaceOn analyze resumes?",
+    answer:
+      "PlaceOn reviews resume structure, role relevance, skills, project descriptions, impact statements, and job-readiness signals to suggest practical improvements.",
+  },
+  {
+    question: "Is PlaceOn free for students?",
+    answer:
+      "PlaceOn offers affordable monthly and yearly plans for students who want structured placement preparation, resume feedback, company readiness checks, roadmaps, and mock interview practice.",
+  },
+  {
+    question: "Which companies are supported?",
+    answer:
+      "PlaceOn is designed to support preparation for campus placement and entry-level roles across product companies, service companies, startups, and role-specific job descriptions.",
+  },
+  {
     question: "Who is PlaceOn built for?",
     answer:
       "PlaceOn is built for college students, recent graduates, placement cells, and training teams preparing for campus or entry-level hiring.",
@@ -166,6 +204,36 @@ const faqs = [
     question: "When will early access open?",
     answer:
       "PlaceOn is designed for early access cohorts. Join the waitlist to be notified when the next student batch opens.",
+  },
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "PlaceOn",
+    url: "https://placeon.in",
+    slogan: "From Learning to Landing Offers",
+    description:
+      "PlaceOn is an AI-powered placement preparation platform that helps students analyze resumes, identify skill gaps, prepare for interviews, and build personalized career roadmaps.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "PlaceOn",
+    url: "https://placeon.in",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   },
 ];
 
@@ -289,6 +357,10 @@ function DashboardPreview() {
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-xl">
         <div className="container flex h-16 items-center justify-between">
           <Logo />
@@ -350,6 +422,47 @@ export default function Home() {
           </div>
           <div className="animate-fade-up [animation-delay:160ms]">
             <DashboardPreview />
+          </div>
+        </div>
+      </section>
+
+      <section id="what-is-placeon" className="border-b py-20 md:py-24">
+        <div className="container grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+          <div>
+            <Badge variant="secondary" className="mb-4">
+              What is PlaceOn?
+            </Badge>
+            <h2 className="text-balance text-3xl font-semibold sm:text-4xl">
+              AI-powered placement preparation for students.
+            </h2>
+            <p className="mt-5 leading-8 text-muted-foreground">
+              PlaceOn is an AI-powered placement preparation platform that helps
+              students analyze resumes, identify skill gaps, prepare for
+              interviews, and build personalized career roadmaps. It is designed
+              for campus placements, job readiness, interview preparation, and
+              early-career career planning.
+            </p>
+            <p className="mt-4 leading-8 text-muted-foreground">
+              Students can use PlaceOn to move from scattered learning to a
+              structured plan for landing offers, with resume feedback, company
+              readiness insights, mock interview practice, and AI career
+              guidance in one workflow.
+            </p>
+          </div>
+          <div>
+            <Badge variant="outline" className="mb-4 bg-background">
+              Why Use PlaceOn?
+            </Badge>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {whyUsePlaceOn.map((item) => (
+                <div key={item.title} className="rounded-lg border bg-card p-5">
+                  <h3 className="font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
