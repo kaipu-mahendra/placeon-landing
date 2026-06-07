@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 import { GoogleAnalytics } from "@/components/google-analytics";
@@ -56,7 +57,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ClerkProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </ClerkProvider>
         <GoogleAnalytics />
       </body>
     </html>
