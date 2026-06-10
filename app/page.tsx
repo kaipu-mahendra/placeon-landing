@@ -17,6 +17,7 @@ import {
 
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -378,7 +379,7 @@ export default function Home() {
           <div className="hidden items-center gap-2 md:flex">
             <ModeToggle />
             <Button variant="ghost" asChild>
-              <a href="#login">Login</a>
+              <Link href="/sign-in">Login</Link>
             </Button>
           </div>
           <MobileNav />
@@ -620,7 +621,7 @@ export default function Home() {
                     variant={plan.featured ? "glow" : "outline"}
                     asChild
                   >
-                    <a href="#login">{plan.cta}</a>
+                    <Link href="/sign-in">{plan.cta}</Link>
                   </Button>
                 </CardContent>
               </Card>

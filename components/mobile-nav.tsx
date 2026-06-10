@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 
@@ -40,9 +41,9 @@ export function MobileNav() {
               </a>
             ))}
             <Button className="mt-2 w-full" variant="outline" asChild>
-              <a href="#login" onClick={() => setOpen(false)}>
+              <Link href="/sign-in" onClick={() => setOpen(false)}>
                 Login
-              </a>
+              </Link>
             </Button>
           </nav>
         </div>
